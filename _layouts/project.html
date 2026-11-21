@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<section class="project-hero">
+    <div class="wrap project-hero-grid">
+        <div>
+            <a class="back" href="{{ '/' | relative_url }}">← 전체 앱</a>
+            <div class="project-icon" aria-hidden="true">{{ page.icon | default: "📦" }}</div>
+            <h1>{{ page.title }}</h1>
+            <p class="lead">{{ page.tagline }}</p>
+            {% if page.tags %}
+            <ul class="tags">
+                {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <aside class="download-box">
+            <h2>다운로드</h2>
+            <div class="downloads" data-downloads data-repository="{{ page.repository }}">
+                <script type="application/json">{{ page.downloads | jsonify }}</script>
+            </div>
+            <p class="release-info">
+                <span data-release-version data-repository="{{ page.repository }}">최신 버전 확인 중...</span>
+                {% assign download_count = site.data.download_stats[page.repository] %}
+                {% if download_count %}<br>누적 다운로드 <span data-number>{{ download_count }}</span>회{% endif %}
+            </p>
+            <p class="release-links">
+                <a href="https://github.com/{{ page.repository }}/releases">모든 릴리스</a>
+                <a href="https://github.com/{{ page.repository }}">소스 코드</a>
+            </p>
+        </aside>
+    </div>
+</section>
+
+<article class="wrap content">
+    {{ content }}
+</article>

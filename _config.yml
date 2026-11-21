@@ -1,0 +1,26 @@
+title: Sunmink4 Apps
+description: 직접 만든 Windows 앱을 내려받는 곳
+lang: ko
+github: sunmink4
+
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: ko
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - scripts

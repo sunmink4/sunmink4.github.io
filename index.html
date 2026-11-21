@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="wrap">
+        <p class="eyebrow">Windows Apps</p>
+        <h1>필요한 도구를<br>직접 만들어 씁니다</h1>
+        <p class="lead">{{ site.description }}. 받아서 바로 실행하면 됩니다.</p>
+    </div>
+</section>
+
+<section class="wrap">
+    <div class="cards">
+        {% assign projects = site.projects | sort: "order" %}
+        {% for project in projects %}
+        <a class="card" href="{{ project.url | relative_url }}">
+            <div class="card-icon" aria-hidden="true">{{ project.icon | default: "📦" }}</div>
+            <div class="card-body">
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.tagline }}</p>
+            </div>
+            <div class="card-footer">
+                <span class="badge" data-release-version data-short data-repository="{{ project.repository }}">…</span>
+                {% assign download_count = site.data.download_stats[project.repository] %}
+                {% if download_count %}
+                <span class="muted">다운로드 <span data-number>{{ download_count }}</span>회</span>
+                {% endif %}
+                <span class="more">자세히 →</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
