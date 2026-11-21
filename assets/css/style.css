@@ -320,6 +320,30 @@ a { color: var(--mint-dark); }
 /* kramdown 이 코드 블록을 div.highlight 로 감싼다 */
 .content .highlight { background: none; }
 
+/* 앱 화면 · 예시 그림 */
+.content .screenshot { display: block; width: 100%; margin: 20px 0 8px; box-shadow: var(--shadow); }
+.content .caption { margin: 0 0 24px; color: var(--ink-soft); font-size: 14px; text-align: center; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0 28px;
+}
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.gallery figcaption { margin-top: 6px; color: var(--ink-soft); font-size: 13px; line-height: 1.4; }
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin: 16px 0 24px;
+}
+.option-grid figure { margin: 0; }
+.option-grid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+.option-grid figcaption { margin-top: 4px; color: var(--ink-soft); font-size: 12px; text-align: center; }
+
 /* 푸터 */
 .site-footer {
     padding: 28px 0;
@@ -336,4 +360,6 @@ a { color: var(--mint-dark); }
     .hero { padding: 56px 0 48px; }
     .project-hero-grid { grid-template-columns: 1fr; gap: 32px; }
     .site-footer .wrap { flex-direction: column; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .option-grid { grid-template-columns: repeat(3, 1fr); }
 }
