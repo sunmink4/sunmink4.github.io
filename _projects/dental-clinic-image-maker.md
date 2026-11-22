@@ -6,10 +6,14 @@ icon: 🦷
 order: 1
 tags: [Windows, WPF, Gemini, ChatGPT, API 요금 없음]
 downloads:
-  - match: '-win-x64\.exe$'
-    label: ⬇ 다운로드
-    sub: 단일 실행 파일 (권장)
+  - match: '-win-Setup\.exe$'
+    label: ⬇ 설치판 받기
+    sub: 바로가기 · 자동 업데이트 (권장)
     primary: true
+  - match: '-win-x64\.exe$'
+    label: 설치 없이 실행
+    sub: 단일 실행 파일
+    beside_primary: true
   - match: '-win-x64-framework-dependent\.exe$'
     label: 경량판 받기
     sub: .NET 8 데스크톱 런타임 필요
@@ -95,9 +99,8 @@ API를 쓰지 않으므로 지금 쓰는 구독 외에 **추가 요금이 들지
 
 ## 설치 방법
 
-받은 exe를 실행하면 됩니다. 따로 설치할 것은 없습니다.
-
-- **다운로드 (권장)** — .NET 런타임까지 들어 있는 단일 실행 파일입니다.
+- **설치판 받기 (권장)** — 받은 `Setup.exe`를 실행하면 바로 설치되고 시작 메뉴 · 바탕화면에 바로가기가 생깁니다. 앱을 켤 때 새 버전이 있으면 알려 주고, 누르면 알아서 업데이트합니다.
+- **설치 없이 실행** — .NET 런타임까지 들어 있는 단일 실행 파일입니다. 받은 exe를 바로 실행합니다(업데이트는 새로 받아야 합니다).
 - **경량판** — 크기가 작은 대신 PC에 [.NET 8 데스크톱 런타임](https://dotnet.microsoft.com/download/dotnet/8.0)이 설치되어 있어야 합니다.
 
 Windows가 "PC 보호" 창을 띄우면 **추가 정보 → 실행**을 누르세요.
